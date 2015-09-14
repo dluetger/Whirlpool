@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-combobox.css" rel="stylesheet">
+    <link href="css/bootstrap-datepicker3.standalone.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700italic,700,600italic,600,400italic,300,300italic' rel='stylesheet' type='text/css'>
 
@@ -46,15 +48,27 @@
         <div class="col-md-offset-2 col-md-8">
           <div class="col-md-3">
             <label for="input-Country">Country</label>
-            <input id="input-Country" type="text" value="Choose a Country" data-var="Choose a Country" class="form-control">
+            <select class="combobox" id="input-Country">
+              <option></option>
+              <option value="ARG">Argentina</option>
+              <option value="BRA">Brazil</option>
+              <option value="CHI">Chile</option>
+            </select>
           </div>
           <div class="col-md-3">
             <label for="input-Category">Category</label>
-            <input id="input-Category" type="text" value="Choose a Category" data-var="Choose a Category" class="form-control">
+            <select class="combobox" id="input-Category">
+              <option></option>
+              <option value="REF">Refrigeration</option>
+              <option value="LAU">Laundry</option>
+              <option value="COO">Cooking</option>
+            </select>
           </div>
           <div class="col-md-3">
             <label for="input-Date">Date</label>
-            <input id="input-Date" type="text" value="Choose a Date" data-var="Choose a Date" class="form-control">
+            <div id="input-Date"class="input-group date">
+              <input type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+            </div>
           </div>
           <div class="col-md-3">
             <button type="button" class="btn btn-default">Search</button>
@@ -94,5 +108,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-combobox.js"></script>
+    <script src="js/bootstrap-datepicker.min.js"></script>    
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.combobox').combobox();
+      });
+    </script>
+    <script>
+      $('#sandbox-container .input-group.date').datepicker({
+      });
+    </script>
   </body>
 </html>
